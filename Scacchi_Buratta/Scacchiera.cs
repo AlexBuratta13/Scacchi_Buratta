@@ -27,12 +27,12 @@ namespace Scacchi_Buratta
                 return Celle[key];
             throw new Exception($"Cella {key} non trovata");
         }
-        public void Print()
+        public void Stampa()
         {
             string s = "";
             int cellSize = 3;
-            PrintLetters(ref s, cellSize);
-            PrintLine(ref s, cellSize);
+            StampaLettera(ref s, cellSize);
+            StampaLinea(ref s, cellSize);
             for (int n = 8; n >= 1; n--)
             {
                 s += $"{n}|";
@@ -46,12 +46,12 @@ namespace Scacchi_Buratta
                     s += "|";
                 }
                 s += "\n";
-                PrintLine(ref s, cellSize);
+                StampaLinea(ref s, cellSize);
             }
-            PrintLetters(ref s, cellSize);
+            StampaLettera(ref s, cellSize);
             Console.Write(s);
         }
-        private static void PrintLetters(ref string s, int cellSize)
+        private static void StampaLettera(ref string s, int cellSize)
         {
             s += "";
             for (char c = 'A'; c <= 'H'; c++)
@@ -60,7 +60,7 @@ namespace Scacchi_Buratta
             }
             s += "|\n";
         }
-        private static void PrintLine(ref string s, int cellSize)
+        private static void StampaLinea(ref string s, int cellSize)
         {
             s += " |".PadRight(cellSize * 11, '-') + "-\n";
         }
